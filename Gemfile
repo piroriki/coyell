@@ -46,6 +46,8 @@ gem "bootstrap"
 
 gem "devise"
 
+gem "rails-i18n", "7.0.1"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

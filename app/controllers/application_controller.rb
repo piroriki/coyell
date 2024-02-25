@@ -1,14 +1,18 @@
 class ApplicationController < ActionController::Base
-  before_action :coonfigure_permitted_params, if: :devise_controller?
+  before_action :configure_permitted_paramaters, if: :devise_controller?
 
   def after_sign_up_path_for(resource)
     "/users/#{current_user.id}"
   end
 
-  protected
+  private
 
-    # 入力フォームからアカウント名をDBに保存する
-    def coonfigure_permitted_params
-      devise_paramater_sanitizer.permit(:sign_up, keys: [:name])
+    # deviseのUserモデルに関するリクエストからパラメータを取得できるようになる
+    # deviseであらかじめ設定されたストロングパラメータに新たにカラムを含めたい場合、
+    # permitメソッドで追加できる
+
+    # ユーザー新規登録時にアカウント名をDBに保存できるようにする
+    def configure_permitted_paramaters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     end
 end

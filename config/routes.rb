@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  get 'tops/index'
+
   devise_for :users, :controllers => { 
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
   }
 
+  # ホーム画面用設定
+  get 'tops/index'
+  root to: "tops#index"
+
   devise_scope :user do
-    get "user/:id", :to => "users/registrations#detail"
-    get "signup",   :to => "users/registrations#new"
-    get "login",    :to => "users/sessions#new"
-    get "logout",   :to => "users/sessions#destroy"
+    get 'user/:id', :to => 'users/registrations#detail'
+    get 'signup',   :to => 'users/registrations#new'
+    get 'login',    :to => 'users/sessions#new'
+    get 'logout',   :to => 'users/sessions#destroy'
   end
+
 end
