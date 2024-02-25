@@ -1,8 +1,0 @@
-ja:
-  users:
-    index:
-      title: "ユーザー一覧"
-    show:
-      title: "%{user_name}さんのユーザー情報"
-    edit:
-      title: "%{user_name}さんのユーザー情報"
