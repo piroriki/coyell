@@ -17,14 +17,6 @@ ja:
               too_long: "は%{count}文字以下に設定してください。"
               invalid: は有効ではありません。
               confiamation: が内容と一致しません。
-
-  helper:
-    placeholder: # 入力フォーム内に表示させたい文字列を設定する
-      user:
-        name: お名前
-        email: user@example.com
-        password: 半角英数字6文字以上
-        password_confirmation: 上記パスワードと同じものを入力
     
     attributes:
       user:
@@ -45,17 +37,17 @@ ja:
     mailer:
       confirmation_instructions:
         action: アカウント確認
-        greeting: "ようこそ、%{name}さん！"
+        #greeting: "ようこそ、%{name}さん！"
         instruction: 次のリンクでメールアドレスの確認が完了します。
       reset_password_instructions:
         action: パスワード変更
-        greeting: "こんにちは、%{name}さん！"
+        #greeting: "こんにちは、%{name}さん！"
         instruction: 次のリンクからパスワードの再設定を行えます。
         instruction_2: 心当たりがなければ、このメールは無視してください。
         instruction_3: 上記リンクにアクセスしてパスワード変更しない限り、現在のパスワードが変更されることはありません。
       unlock_instructions:
         action: アカウントのロック解除
-        greeting: "こんにちは、%{name}さん！"
+        #greeting: "こんにちは、%{name}さん！"
         instructions: アカウントのロックを解除するには、下記リンクをクリックしてください。
         message: ログイン失敗が繰り返されたため、このアカウントは現在ロックされています。
       passwords:
