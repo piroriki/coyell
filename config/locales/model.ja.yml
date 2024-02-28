@@ -10,8 +10,7 @@ ja:
   attributes:
     user:
       id: ID
-      first_name: 名前
-      last_name: 姓
+      name: お名前
       email: メールアドレス
       avator: プロフィール画像
       password: パスワード
