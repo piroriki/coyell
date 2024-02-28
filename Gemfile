@@ -39,14 +39,22 @@ gem "jbuilder"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
+# 既存のerbをslimに変換、railsでslimを使用できるようにする
 gem "slim-rails"
 gem "html2slim"
 
+# cssでデザインを見栄え良くする
 gem "bootstrap"
 
+# railsでユーザー関連機能をまとめて作成
 gem "devise"
 
+# rails用日本語化
 gem "rails-i18n", "7.0.1"
+
+# devise用日本語化
+gem "devise-i18n"
+gem "devise-i18n-views"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
