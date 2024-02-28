@@ -5,8 +5,8 @@ h2 = t".title"
   = render "users/shared/error_messages", resource: resource
 
   .field
-    = f.label :email
-  = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: true
+    = f.label :name
+  = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: true
   br
   br
   .field

@@ -26,6 +26,11 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'coyell@example.com'
 
+  # ユーザー認証時にnameカラムでチェックを行えるように設定
+  config.authentication_keys = [:name]
+  config.case_insensitive_keys = [:name]
+  config.strip_whitespace_keys = [:name]
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
