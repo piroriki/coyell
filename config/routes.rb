@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'tops/index'
   root to: "tops#index"
 
-  devise_scope :user do
+  devise_scope :user do # deviseで使用したいファイルのみルーティング設定
     get 'user/:id', :to => 'users/registrations#detail'
     get 'signup',   :to => 'users/registrations#new'
     get 'login',    :to => 'users/sessions#new'

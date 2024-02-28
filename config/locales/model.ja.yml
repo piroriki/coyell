@@ -1,20 +1,38 @@
-# モデルに関する記述はすべてactiverecord以下に定義する
-# User.model_name.human / User.human_attribute_name({attr_name})で使用可能になる
-
 ja:
-  activerocord:
-    models:
-    # view側: User.model_name.human => "ユーザー"　/ t("activerecord.models.user")と同じ
+  activerecord:
+    models: # userモデルはdevise.ja.ymlで設定済みのため、それ以外のモデルを一括で日本語化する
       user: ユーザー
-      board: 掲示板
-  attributes:
-    user:
-      id: ID
-      name: お名前
-      email: メールアドレス
-      avator: プロフィール画像
-      password: パスワード
-# すべてのmodelで共通するattributesを定義
-  attributes:
+    attributes:
+      user:
+        id: ID
+        name: お名前
+        email: メールアドレス
+  
+  attributes: # 全モデルで共通して使用する
     created_at: 作成日
     updated_at: 更新日
+  
+  message: # 各コントローラの日本語化は、モデルから指定する
+    update: # コントローラで日本語化させたい各アクション
+      notice:
+      alert:
+
+  flash: # 共通して使用したいフラッシュメッセージを設定する
+    new: 作成完了しました。
+    updated: 更新しました。
+    failed: 失敗しました。
+    destroy: 削除しました。
+    login: ログインしました。
+    logout: ログアウトしました。
+    limited_access: 不正にアクセスしています。
+    tag_follow: タグをフォローしました。
+    tag_not_follow: タグをフォローできませんでした。
+    tag_remove_follow: タグのフォローを解除しました。
+
+  helper:
+    placeholder: # 入力フォーム内で文字を表示させたい場合に使用する
+      message:
+        name: お名前
+        
+      
+  

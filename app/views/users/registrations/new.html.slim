@@ -1,15 +1,17 @@
-h2
-  | ユーザー新規登録
+h2 = t".title"
+
 = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+
   = render "users/shared/error_messages", resource: resource
+
   .field 
     = f.label :name
-  = f.text_field :name, autofocus: true, autocomplete: "name"
+  = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: true
   br
   br
   .field
     = f.label :email
-  = f.email_field :email, autofocus: true, autocomplete: "email"
+  = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: true
   br
   br
   .field
@@ -19,14 +21,13 @@ h2
         | (最低
         = @minimum_password_length
         | 文字以上)
-  = f.password_field :password, autocomplete: "new-password"
+  = f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: true
   br
   br
   .field
     = f.label :password_confirmation
-  = f.password_field :password_confirmation, autocomplete: "new-password"
-  br
+  = f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", placeholder: true
   br
   .actions
-    = f.submit "新規登録"
+    = f.submit
 = render "users/shared/links"
