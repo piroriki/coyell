@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
     # ユーザー新規登録時にアカウント名をDBに保存できるようにする
     def configure_permitted_paramaters
       if resource_class == User
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
-        devise_parameter_sanitizer.permit(:log_in, keys: [:name])
+        devise_parameter_sanitizer.permit(:sign_up, keys:[:remember_me])
+        #devise_parameter_sanitizer.permit(:log_in, keys:[:name, :remember_me])
       end
     end
 end
