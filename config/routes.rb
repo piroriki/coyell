@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # ホーム画面用設定
   get 'tops/index'
   root to: "tops#index"
+  resources :children
 
   devise_scope :user do # deviseで使用したいファイルのみルーティング設定
     get 'user/:id', :to => 'users/registrations#detail'
